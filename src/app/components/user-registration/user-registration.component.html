@@ -1,0 +1,121 @@
+<!-- header -->
+<header>
+    <!-- App Name -->
+
+        <h2>DEMO APP</h2>
+
+        <!-- navbar -->
+
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">JOBS</a></li>
+            <li><a href="">CLIENTS</a></li>
+            <li><a href="">EMPLOYERS</a></li>
+            <li><a href="">CONTACT US</a></li>
+        </ul>
+
+        <!-- input section -->
+
+        <i>I'm looking For...</i>
+        <input class="input" type="text" placeholder="Enter Job Description">
+        <input class="input1" type="checkbox"><span class="text1">Full Time</span>
+        <input class="input2" type="checkbox"><span class="text2">Part Time/Casual/Freelancer</span> 
+
+        <!--Location Area -->
+
+        <select name="" class="select">
+            <option value="">Select your location</option>
+            <option value="">Pune</option>
+            <option value="">Mumbai</option>
+            <option value="">Banglore</option>
+            <option value="">Hyderabad</option>
+            <option value="">Chennai</option>
+            <option value="">Noida</option>
+        </select>
+
+        <!-- Buttons -->
+        <button class="btn btn-primary" id="search">Search</button>
+</header>
+
+<!-- Grey-Container -->
+
+<div class="grey-container">
+    <span class="txt1">We're leaders in</span>
+    <div class="txt2">Creative Digital Recruitment</div>
+    <div class="blueline"></div>
+    <p class="p1">Basically in Surry Hills, the creative hub of Sydney we are surrounded by creativity</p>
+    <p class="p2">and that reflects on the type of jobs we recruit for.</p>
+    <a href="#" id="btn">FIND OUT MORE ABOUT US!</a>
+</div>
+
+<!-- Black-Container -->
+
+<div class="black-container">
+    <p class="p3">Subscribe to our Job Seeker Mailing List</p><br>
+    <input id="input" type="text" placeholder="Enter Your Email Address">
+</div>
+
+<!-- Footer -->
+
+<footer>
+    <p>Copyright &copy; 2014 Two Bytes Consulting. <b>Terms & Conditions</b></p>
+</footer>
+
+<!-- form-container -->
+
+<div class="form-container">
+    <h1>Register</h1>
+    <button class="button" (click)="close()">X</button>
+    <div class="fileupload">
+        <label for="photo" style="cursor: pointer;opacity: 0.9;"><svg xmlns="http://www.w3.org/2000/svg" height="8rem" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></label>
+        <br><br><input type="file" id="photo" maxlength="325px" style="display: none; visibility: hidden;">
+        <h3 style="font-size: 1.1rem;">Upload Your Photo</h3>    </div>
+        <form [formGroup]="registrationForm">
+            <label>First Name  </label>
+            <input type="text" class="firstname" formControlName="firstname" placeholder="First Name" maxlength="20" required>
+            <label>Last Name  </label>
+            <input type="text" class="lastname" formControlName="lastname" placeholder="Last Name"><br><br>
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" formControlName="email"><br><br>
+            <input type="text" placeholder="(541)-754-3010" formControlName="number"><br><br>
+            <label>Age</label>
+            <input type="range" value="24" min="1" max="100" formControlName="age" oninput="this.nextElementSibling.value = this.value">
+            <output>20</output><br><br>
+            <select name="State" formControlName="State">
+                        <option value="" selected disabled hidden>State</option>
+                        <option value="">Gujarat</option>
+                        <option value="">Madhya Pradesh</option>
+                        <option value="">Maharashtra</option>
+                        <option value="">Telangana</option>
+                        <option value="">Punjab</option>
+                        <option value="">Andhra Pradesh</option>
+            </select><br><br>
+            <select name="Country" formControlName="Country">
+                            <option value="" selected disabled hidden>Country</option>
+                            <option value="">India</option>
+                            <option value="">Australia</option>
+                            <option value="">USA</option>
+                            <option value="">China</option>
+                            <option value="">New Zealand</option>
+                            <option value="">Canada</option>
+                        </select><br><br>
+                 <select name="Address">
+                    <option value="" selected disabled hidden>Home</option>
+                    <option value="">Address1</option>
+                    <option value="">Address2</option>
+                 </select><br><br>
+                 <select name="">
+                    <option value="" selected disabled hidden>Company</option>
+                    <option value="">Company1</option>
+                    <option value="">Company2</option>
+                 </select>
+                 <br><br>
+                 <input type="text" placeholder="tags" formControlName="tags"><br><br>
+                 <span class="tag1">Cricket</span><span class="x1">X</span> <span class="tag2"> Football</span> <span class="x2">X</span> <span class="tag3"> Hockey</span> <span class="x3"> X</span>
+                 <input type="checkbox" class="checkbox" formControlName="checkbox"><span id="span">Subscribe to newsletter</span>
+                    <button class="Cancel" (click)="cancel()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="Submit" (click)="submit()">Submit</button>
+        </form>
+    </div>
+

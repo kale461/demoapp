@@ -1,0 +1,99 @@
+<header>
+    <a href="/">DEMO APP</a>
+
+    <!-- navbar -->
+    <ul>
+        <li><a href="">HOME</a></li>
+        <li><a href="">ABOUT US</a></li>
+        <li><a href="">JOBS</a></li>
+        <li><a href="">CLIENTS</a></li>
+        <li><a href="">EMPLOYERS</a></li>
+        <li><a href="">CONTACT US</a></li>
+    </ul>
+</header>
+
+<!-- content -->
+
+<div class="content">
+    <span class="profile">Profile</span>
+    <img [src]="url" alt="">
+    <input type="file" id="profile" onchange="selectimage($event)" style="display: none;">
+    <label for="profile"><div style="cursor: pointer;" id="editphoto">Edit Photo</div></label>
+    <button id="editprofile" (click)="edit()">Edit Profile</button>
+
+    <p>I'm Caroline Kassidy and Im above 20 years old and you can send me your emails to
+        caroline.kassidypublicsis.com. I live in the state of Alaska. I like to play hockey,football and reading books.
+        And please send me newsletter. Please reach out me on my phone number.
+    </p>
+    <button class="btn btn-success" id="agree">I Agree</button>
+
+</div>
+
+<!-- Form-Container -->
+
+<div class="form-container" *ngIf="showEdit">
+    <h1>Edit</h1>
+    <button class="button" (click)="close()">X</button>
+    <div class="fileupload">
+        <label for="photo" style="cursor: pointer;opacity: 0.9;"><svg xmlns="http://www.w3.org/2000/svg" height="8rem" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></label>
+        <br><br><input type="file" id="photo" maxlength="325px" style="display: none; visibility: hidden;">
+        <h3 style="font-size: 1.1rem;">Upload Your Photo</h3>    </div>
+        <form [formGroup]="EditForm">
+            <label>First Name  </label>
+            <input type="text" class="firstname" formControlName="firstname" placeholder="First Name" maxlength="20" required>
+            <label>Last Name  </label>
+            <input type="text" class="lastname" formControlName="lastname" placeholder="Last Name"><br><br>
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" formControlName="email"><br><br>
+            <input type="text" placeholder="(541)-754-3010" formControlName="number"><br><br>
+            <label>Age</label>
+            <input type="range" value="24" min="1" max="100" formControlName="age" oninput="this.nextElementSibling.value = this.value">
+            <output>20</output><br><br>
+            <select name="State" formControlName="State">
+                        <option value="" selected disabled hidden>State</option>
+                        <option value="">Gujarat</option>
+                        <option value="">Madhya Pradesh</option>
+                        <option value="">Maharashtra</option>
+                        <option value="">Telangana</option>
+                        <option value="">Punjab</option>
+                        <option value="">Andhra Pradesh</option>
+            </select><br><br>
+            <select name="Country" formControlName="Country">
+                            <option value="" selected disabled hidden>Country</option>
+                            <option value="">India</option>
+                            <option value="">Australia</option>
+                            <option value="">USA</option>
+                            <option value="">China</option>
+                            <option value="">New Zealand</option>
+                            <option value="">Canada</option>
+                        </select><br><br>
+                 <select name="Address">
+                    <option value="" selected disabled hidden>Home</option>
+                    <option value="">Address1</option>
+                    <option value="">Address2</option>
+                 </select><br><br>
+                 <select name="">
+                    <option value="" selected disabled hidden>Company</option>
+                    <option value="">Company1</option>
+                    <option value="">Company2</option>
+                 </select>
+                 <br><br>
+                 <input type="text" placeholder="tags" formControlName="tags"><br><br>
+                 <input type="checkbox" class="checkbox" formControlName="checkbox"><span id="span">Subscribe to newsletter</span>
+                    <button class="Cancel" (click)="cancel()">Cancel</button>
+                    <button type="submit" class="btn btn-success" id="Submit">Edit</button>
+        </form>
+    </div>
+
+<!-- black container -->
+
+<div class="black-container">
+    <p class="p3">Subscribe to our Job Seeker Mailing List</p><br>
+    <input id="input" type="text" placeholder="Enter Your Email Address">
+    <svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
+</div>
+
+
+
+
+
